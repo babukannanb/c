@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+ int physics,chemistry,maths,biology,computer;
+ printf("enter the marks of all subject");
+ scanf("%d %d %d %d %d",&physics,&chemistry,&maths,&biology,&computer);
+ float percentage=((physics+chemistry+maths+biology+computer)/5.0);
+ if(percentage>=90 && percentage<100)
+ {
+     printf("grade A");
+ }
+  else if(percentage>=80 && percentage<90)
+ {
+     printf("grade B");
+ }
+  else if(percentage>=70 && percentage<80)
+ {
+     printf("grade C");
+ }
+  else if(percentage>=60 && percentage<70)
+ {
+     printf("grade D");
+ }
+  else if(percentage>=40 && percentage<60)
+ {
+     printf("grade E");
+ }
+ else
+ {
+     printf("grade f");
+ }
+ return 0;
+}
