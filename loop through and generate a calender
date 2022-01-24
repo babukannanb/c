@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(){
+   int i,n;
+   int first;
+   printf("enter no of days in a month:\n");
+   scanf("%d",&n);
+   printf("enter first day in a month:\n");
+   scanf("%d",&first);
+   for(i=1;i<first;i++)
+      printf(" ");
+   for(i=1;i<=n;i++){
+      printf("%3d",i);
+      if((first+i-1)%7==0)
+         printf("\n");
+   }
+   return 0;
+}
