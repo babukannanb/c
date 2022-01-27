@@ -1,0 +1,20 @@
+#include<stdio.h>
+void MatrixMultiplication(int matrixA[][50], int rA, int cA, int matrixB[][50], int rB, int cB, int matrixC[][50]) {
+	int i, j, k, sum = 0;
+
+	if (cA != rB) {
+		printf("Order of Input Matricis is Invalid");
+		return;
+	}
+
+	for (i = 0; i < rA; ++i) {
+		for (j = 0; j < cB; ++j) {
+			sum = 0;
+			for (k = 0; k < rA; ++k) {
+				sum += *(*(matrixA + i) + k) * *(*(matrixB + k) + j);
+			}
+			*(*(matrixC + i) + j) = sum;
+		}
+	}
+
+}
