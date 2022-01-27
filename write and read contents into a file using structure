@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct  student
+{
+    int id[50];
+    char name[50];
+    int age[50];
+    char course[50];
+};
+int main()
+{
+  FILE *fp;
+  struct student s;
+  int i;
+
+  if(fp=fopen("school.txt","w")==NULL)
+  {
+      printf("error cannot open file ");
+      exit(1);
+  }
+  printf("enter student details\n");
+  for(int i=0;i<1;i++)
+  {
+      printf("enter the id \n");
+    scanf("%d",&s.id[i]);
+       printf("enter the name \n");
+      scanf("%s",&s.name[i]);
+       printf("enter the age \n");
+      scanf("%d",&s.age[i]);
+       printf("enter the course \n");
+      scanf("%s",&s.course[i]);
+    fwrite(&s, sizeof(struct student), 1, fp);
+  }
+ fp=fopen("school.txt","r");
+ for(int i=0;i<1;i++)
+ {
+ fread(&s, sizeof(struct student), 1, fp);
+printf("id: %d \t name: %s \t age: %d \t course:%s \n", s.id[i], s.name, s.age[i],s.course);
+ }
+  fclose(fp);
+  return 0;
+}
