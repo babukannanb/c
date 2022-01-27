@@ -1,0 +1,63 @@
+#include<stdio.h>
+int main()
+{
+  int arr[]={1,2,3,4,5,6,7,8,9,10};
+     int length = sizeof(arr)/sizeof(arr[0]);
+  for(int i=length-1;i>=0;i--)
+  {
+      printf("%d",arr[i]);
+      printf("\n");
+  }
+    return 0;
+}
+
+
+reverse a string using pointer
+
+#include<stdio.h>
+int main()
+{
+char *s;
+int len,i;
+printf("enter a string:\n ");
+gets(s);
+len=strlen(s);
+printf("reverse of a string is:\n");
+for(i=len;i>=0;i--)
+printf("%c",*(s+i));
+getch();
+}
+
+
+
+sort an array using pointer
+
+#include<stdio.h>
+
+void sortarr(int a,int *b)
+{
+    int i,j,temp;
+    for(i=0;i<a;i++)
+  {
+    for(j=i+1;j<a;j++)
+    {
+        if(*(b+i)>*(b+j))
+        {
+            temp=*(b+i);
+            *(b+i)=*(b+j);
+            *(b+j)=temp;
+        }
+    }
+   }
+    for(i=0;i<a;i++)
+    {
+        printf("\n %d ",*(b+i));
+    }
+}
+int main()
+{
+    int size=5;
+    int arr[]={44,22,77,99,33};
+    sortarr(size,arr);
+    return 0;
+}
