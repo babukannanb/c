@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main() {
+ FILE *fptr;
+ char ch;
+ fptr= fopen ("username1.txt", "w");
+ printf("enter your name");
+ while( (ch = getchar()) != '\n') {
+  putc(ch,fptr);
+ }
+  fclose(fptr);
+  fopen("username1.txt","r");
+  printf("Filecontent :\n");
+  while((ch=getc(fptr))!=EOF)
+  {
+      printf("%c",ch);
+  }
+  printf("end of file:\n");
+  fclose(fptr);
+}
